@@ -44,8 +44,14 @@ export const LogoTicker = () => {
                 quantumLogo,
                 apexLogo,
                 echoLogo,
-              ].map((logo) => (
-                <Image src={logo.src} key={logo.src} className='h-6  w-auto' alt='Logo Image'/>
+              ].map((logo, index) => (
+                <Image
+                  key={index}
+                  src={logo}       // ✅ pass object, not logo.src
+                  alt="Logo Image"
+                  height={24}      // ✅ define at least one dimension
+                  className="w-auto"
+                />
               ))}
             </motion.div>
           </div>
